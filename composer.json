@@ -1,0 +1,17 @@
+{
+  "name": "farzoqe/support",
+  "description": "Reusable support package for Laravel apps",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Farzoqe\\Support\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Farzoqe\\Support\\SupportServiceProvider"
+      ]
+    }
+  }
+}
