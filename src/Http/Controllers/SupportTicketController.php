@@ -41,7 +41,6 @@ class SupportTicketController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
         $supportTicket = SupportTicket::getInstance();
         $supportTicket->fill($request->only([
             'subject'
