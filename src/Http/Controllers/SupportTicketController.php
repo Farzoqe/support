@@ -57,7 +57,7 @@ class SupportTicketController extends Controller
      */
     public function show(SupportTicket $supportTicket)
     {
-        $statuses = array_column(SupportTicketStatusEnum::cases(), 'value');
+        $statuses = SupportTicket::STATUSES;
         $statuses = array_combine($statuses, $statuses);
         $ticket = $supportTicket;
         $ticket->load("details.user");
