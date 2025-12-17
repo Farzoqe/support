@@ -116,4 +116,11 @@ class SupportTicketController extends Controller
         ]);
         return successful();
     }
+
+    function close(SupportTicket $supportTicket)
+    {
+        $supportTicket->status = 'Closed';
+        $supportTicket->save();
+        return successful();
+    }
 }
