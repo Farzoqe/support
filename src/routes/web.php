@@ -6,4 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['web', 'auth'])->group(function () {
     Route::resources(['support-tickets' => SupportTicketController::class,]);
     Route::post('support-tickets/{supportTicket}/close', [SupportTicketController::class, 'close']);
+    Route::post('support-tickets/{supportTicket}/re-open', [SupportTicketController::class, 'reOpen']);
 });

@@ -123,4 +123,11 @@ class SupportTicketController extends Controller
         $supportTicket->save();
         return successful();
     }
+
+    function reOpen(SupportTicket $supportTicket)
+    {
+        $supportTicket->status = 'Open';
+        $supportTicket->save();
+        return successful();
+    }
 }
