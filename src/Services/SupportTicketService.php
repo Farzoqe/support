@@ -33,6 +33,8 @@ class SupportTicketService
         $supportTicket = $this->supportTicket;
         if ($supportTicket->user_id == auth()->id()) {
             $supportTicket->status = 'Open';
+            SupportTicketUpdated::dispatch($supportTicket);
+
         } else {
             $supportTicket->status = 'Awaiting Customer Reply';
             SupportTicketUpdated::dispatch($supportTicket);
