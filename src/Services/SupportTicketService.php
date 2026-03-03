@@ -2,6 +2,7 @@
 
 namespace Farzoqe\Support\Services;
 
+use Farzoqe\Support\Events\SupportTicketUpdated;
 use Farzoqe\Support\Models\SupportTicket;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,6 +35,7 @@ class SupportTicketService
             $supportTicket->status = 'Open';
         } else {
             $supportTicket->status = 'Awaiting Customer Reply';
+            SupportTicketUpdated::dispatch($supportTicket);
         }
         $supportTicket->save();
     }
